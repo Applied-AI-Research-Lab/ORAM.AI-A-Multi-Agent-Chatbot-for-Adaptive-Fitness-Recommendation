@@ -25,7 +25,7 @@
 If you use this software in your research, please cite it as:
 
 ```bibtex
-@software{roumeliotis_2026_18353796,
+@misc{roumeliotis_2026_18353796,
   author       = {Roumeliotis, Konstantinos I. and
                   Zestas, Orestis N. and
                   Kyriakou, Kyriakos D. and
@@ -37,7 +37,8 @@ If you use this software in your research, please cite it as:
   year         = 2026,
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.18353797},
-  url          = {https://doi.org/10.5281/zenodo.18353797}
+  url          = {https://github.com/Applied-AI-Research-Lab/ORAM.AI-A-Multi-Agent-Chatbot-for-Adaptive-Fitness-Recommendation/},
+  note         = {Software repository}
 }
 ```
 
@@ -82,10 +83,10 @@ This research was conducted in the context of the **ORAMA project (YΠ3TA-055991
 <b>🏢 Ostracon Ltd.</b>
 </td>
 <td align="center" width="25%">
-<b>🏭 ELPRA S.A.</b>
+<b>🏢 ELPRA S.A.</b>
 </td>
 <td align="center" width="25%">
-<b>⚽ HNFC Academy</b>
+<b>🏢 HNFC Academy</b>
 </td>
 </tr>
 </table>
