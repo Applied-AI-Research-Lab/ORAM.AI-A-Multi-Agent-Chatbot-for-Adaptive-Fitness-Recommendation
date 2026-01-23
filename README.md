@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Status](https://img.shields.io/badge/Status-Under_Review-yellow)](https://github.com)
-[![DOI](https://zenodo.org/badge/1140749595.svg)](https://doi.org/10.5281/zenodo.18353796)
+[![DOI](https://zenodo.org/badge/1140749595.svg)](https://doi.org/10.5281/zenodo.18353797)
 
 ---
 
@@ -36,8 +36,8 @@ If you use this software in your research, please cite it as:
   title        = {ORAM.AI Chatbot},
   year         = 2026,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18353796},
-  url          = {https://doi.org/10.5281/zenodo.18353796}
+  doi          = {10.5281/zenodo.18353797},
+  url          = {https://doi.org/10.5281/zenodo.18353797}
 }
 ```
 
