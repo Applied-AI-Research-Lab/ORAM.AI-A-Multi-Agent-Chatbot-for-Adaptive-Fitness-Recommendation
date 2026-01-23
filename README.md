@@ -8,6 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Status](https://img.shields.io/badge/Status-Under_Review-yellow)](https://github.com)
+[![DOI](https://zenodo.org/badge/1140749595.svg)](https://doi.org/10.5281/zenodo.18353796)
 
 ---
 
@@ -18,6 +19,7 @@
 > **Status:** Under Peer Review
 
 **Title:** *ORAM.AI: A Multi-Agent Chatbot with RAG-Based Reasoning and MCP Integration for Adaptive Fitness Recommendation*
+**Software DOI:** [https://doi.org/10.5281/zenodo.18353796](https://doi.org/10.5281/zenodo.18353796)
 
 ### 👥 Authors
 
