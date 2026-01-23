@@ -21,6 +21,27 @@
 **Title:** *ORAM.AI: A Multi-Agent Chatbot with RAG-Based Reasoning and MCP Integration for Adaptive Fitness Recommendation*
 **Software DOI:** [https://doi.org/10.5281/zenodo.18353796](https://doi.org/10.5281/zenodo.18353796)
 
+## � Citing This Software
+
+If you use this software in your research, please cite it as:
+
+```bibtex
+@software{roumeliotis_2025_18353796,
+  author       = {Roumeliotis, Konstantinos I. and
+                  Zestas, Orestis N. and
+                  Kyriakou, Kyriakos D. and
+                  Soumis, Dimitrios N. and
+                  Kapellaki, Sofia H. and
+                  Seklou, Kyriaki and
+                  Tselikas, Nikolaos D.},
+  title        = {ORAM.AI Chatbot},
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.18353796},
+  url          = {https://doi.org/10.5281/zenodo.18353796}
+}
+```
+
 ### 👥 Authors
 
 <table>
