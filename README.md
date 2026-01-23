@@ -19,7 +19,6 @@
 > **Status:** Under Peer Review
 
 **Title:** *ORAM.AI: A Multi-Agent Chatbot with RAG-Based Reasoning and MCP Integration for Adaptive Fitness Recommendation*
-**Software DOI:** [https://doi.org/10.5281/zenodo.18353796](https://doi.org/10.5281/zenodo.18353796)
 
 ## 📖 Citing This Software
 
