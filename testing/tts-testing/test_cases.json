@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "description": "TTS Auto-Speak Mode Test Cases - Evaluating Text-to-Speech performance",
+    "total_tests": 25,
+    "total_words": 951,
+    "total_chars": 5713,
+    "categories": ["short", "medium", "long", "very_long", "edge_case", "minimal"]
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "short",
+      "text": "Good morning! How can I help you today?",
+      "description": "Greeting message - short",
+      "word_count": 7,
+      "char_count": 40
+    },
+    {
+      "id": 2,
+      "category": "short",
+      "text": "The exercise was completed successfully.",
+      "description": "Success confirmation - short",
+      "word_count": 6,
+      "char_count": 41
+    },
+    {
+      "id": 3,
+      "category": "short",
+      "text": "Continue with the leg exercises.",
+      "description": "Exercise instruction - short",
+      "word_count": 5,
+      "char_count": 33
+    },
+    {
+      "id": 4,
+      "category": "short",
+      "text": "Great job! You're on the right track.",
+      "description": "Encouragement - short",
+      "word_count": 7,
+      "char_count": 38
+    },
+    {
+      "id": 5,
+      "category": "short",
+      "text": "The total number of repetitions is twelve.",
+      "description": "Numeric information - short",
+      "word_count": 7,
+      "char_count": 43
+    },
+    {
+      "id": 6,
+      "category": "medium",
+      "text": "For strengthening your abs, I recommend doing planks for 30 seconds, 3 repetitions. Maintain proper form and breathe steadily throughout the exercise.",
+      "description": "Exercise recommendation - medium",
+      "word_count": 24,
+      "char_count": 151
+    },
+    {
+      "id": 7,
+      "category": "medium",
+      "text": "Leg exercises include squats, lunges, and leg press. Start with 3 sets of 10 repetitions for each exercise and gradually increase the intensity over time.",
+      "description": "Workout plan - medium",
+      "word_count": 27,
+      "char_count": 156
+    },
+    {
+      "id": 8,
+      "category": "medium",
+      "text": "Proper technique in the deadlift is critical to avoid injuries. Keep your back straight, engage your core, and lift the weight using your legs, not your back.",
+      "description": "Form guidance - medium",
+      "word_count": 30,
+      "char_count": 159
+    },
+    {
+      "id": 9,
+      "category": "medium",
+      "text": "For better results, combine resistance training with cardiovascular exercise. I recommend 3 times per week for strength and 2 times for cardio sessions.",
+      "description": "Training split - medium",
+      "word_count": 26,
+      "char_count": 153
+    },
+    {
+      "id": 10,
+      "category": "medium",
+      "text": "Recovery is just as important as training. Ensure 7 to 8 hours of sleep, drink plenty of water, and eat protein for muscle repair and growth.",
+      "description": "Recovery advice - medium",
+      "word_count": 28,
+      "char_count": 142
+    },
+    {
+      "id": 11,
+      "category": "long",
+      "text": "For weight loss, you need a combination of proper nutrition and exercise. I recommend starting with 30 minutes of cardiovascular training 5 times per week, such as running or cycling. Supplement with strength exercises 3 times per week to maintain muscle mass. Remember that nutrition is 70 percent of success, so reduce your daily calories by 300 to 500.",
+      "description": "Comprehensive weight loss plan - long",
+      "word_count": 68,
+      "char_count": 393
+    },
+    {
+      "id": 12,
+      "category": "long",
+      "text": "The beginner program should focus on learning proper technique before increasing resistance. Start with bodyweight exercises like push-ups, squats, and planks. After 4 to 6 weeks, add light weights and gradually increase intensity. Work out 3 to 4 times per week with rest days in between for recovery. Listen to your body and don't rush to progress too quickly.",
+      "description": "Beginner program - long",
+      "word_count": 70,
+      "char_count": 407
+    },
+    {
+      "id": 13,
+      "category": "long",
+      "text": "Lower back injuries are common in weightlifting. To avoid them, focus on core strengthening with exercises like bird dogs, dead bugs, and side planks. Always use a support belt when lifting heavy weights in deadlifts or squats. Maintain a neutral spine position and avoid twisting under load. If you feel pain, stop immediately and consult a physical therapist. Prevention is always better than treatment.",
+      "description": "Injury prevention - long",
+      "word_count": 73,
+      "char_count": 440
+    },
+    {
+      "id": 14,
+      "category": "long",
+      "text": "Pre-workout preparation includes dynamic warm-up and mobility work. Start with 5 to 10 minutes of light cardiovascular activity to increase body temperature. Then perform dynamic stretches for the muscle groups you'll work, such as leg swings for legs or arm circles for shoulders. Finish with light sets of your main exercise using 40 to 50 percent of your maximum weight. A good warm-up reduces injury risk and improves performance.",
+      "description": "Warm-up protocol - long",
+      "word_count": 80,
+      "char_count": 470
+    },
+    {
+      "id": 15,
+      "category": "long",
+      "text": "Post-workout nutrition is critical for recovery. Within 30 to 60 minutes of finishing exercise, consume a meal with protein and carbohydrates. Protein helps repair muscle fibers while carbohydrates replenish glycogen stores. Ideal meals include chicken with rice, protein shake with banana, or yogurt with fruit and honey. Also drink plenty of water to restore fluids lost through sweat during your workout.",
+      "description": "Post-workout nutrition - long",
+      "word_count": 71,
+      "char_count": 447
+    },
+    {
+      "id": 16,
+      "category": "very_long",
+      "text": "Creating a comprehensive workout program requires careful planning and understanding of your goals. First, define your main objectives: weight loss, muscle gain, endurance improvement, or general fitness. Based on these, choose appropriate exercises and training frequency. A balanced program includes exercises for all major muscle groups: legs, back, chest, shoulders, arms, and abs. Alternate days between different muscle groups to allow recovery. Also add cardiovascular training 2 to 3 times per week and rest days for optimal results. Track your progress with measurements and adjust the program every 6 to 8 weeks to avoid body adaptation and plateaus.",
+      "description": "Complete workout program design - very long",
+      "word_count": 115,
+      "char_count": 710
+    },
+    {
+      "id": 17,
+      "category": "very_long",
+      "text": "The relationship between sleep and athletic performance is very important and often underestimated. During sleep, the body releases growth hormone which is essential for muscle repair and development. Lack of sleep reduces testosterone levels, increases cortisol, and negatively affects protein synthesis. Additionally, insufficient sleep impairs cognitive function, reduces reaction time, and increases injury risk. For optimal performance, aim for 7 to 9 hours of quality sleep each night. Maintain a consistent sleep schedule, avoid caffeine after 2 PM, and create a dark, cool environment in your bedroom. Use of electronic devices before sleep should be limited as blue light affects melatonin production.",
+      "description": "Sleep and performance - very long",
+      "word_count": 118,
+      "char_count": 730
+    },
+    {
+      "id": 18,
+      "category": "very_long",
+      "text": "Progressive overload is the fundamental principle for increasing muscle strength and mass. The body adapts to the stress it receives, so you must continually increase training intensity. There are many ways to apply this principle: increasing the weight you lift, increasing repetitions, increasing sets, decreasing rest time, or increasing training frequency. The key is to make small, gradual increases to avoid injuries. For example, increase weight by 2.5 to 5 percent when you can complete all repetitions with good technique. Keep a training log to track progress and ensure continuous improvement. Remember that progress isn't always linear and some weeks may require deload and recovery.",
+      "description": "Progressive overload principle - very long",
+      "word_count": 120,
+      "char_count": 738
+    },
+    {
+      "id": 19,
+      "category": "edge_case",
+      "text": "The program: 3x10 squats, 4x8 bench press, 5x5 deadlifts. Rest: 90 seconds.",
+      "description": "Mixed numbers and symbols",
+      "word_count": 13,
+      "char_count": 75
+    },
+    {
+      "id": 20,
+      "category": "edge_case",
+      "text": "Question: How do I perform the Romanian Deadlift (RDL)? Answer: Keep your legs straight and bend from the hips.",
+      "description": "Question-answer format with abbreviation",
+      "word_count": 19,
+      "char_count": 119
+    },
+    {
+      "id": 21,
+      "category": "edge_case",
+      "text": "High-Intensity Interval Training (HIIT) workout: 30sec work / 30sec rest × 8 rounds = 8min total!",
+      "description": "HIIT with calculations",
+      "word_count": 14,
+      "char_count": 97
+    },
+    {
+      "id": 22,
+      "category": "edge_case",
+      "text": "BMI = 25.3, Body Fat% = 18.2%, VO2max = 45 ml/kg/min. Keep it up!!!",
+      "description": "Health metrics with units and symbols",
+      "word_count": 12,
+      "char_count": 68
+    },
+    {
+      "id": 23,
+      "category": "edge_case",
+      "text": "Today: Legs! Tomorrow: Back & Biceps. Let's go!!!",
+      "description": "Workout schedule with punctuation",
+      "word_count": 8,
+      "char_count": 50
+    },
+    {
+      "id": 24,
+      "category": "minimal",
+      "text": "Yes.",
+      "description": "Single word - absolute minimum",
+      "word_count": 1,
+      "char_count": 4
+    },
+    {
+      "id": 25,
+      "category": "minimal",
+      "text": "No, stop.",
+      "description": "Two words - minimal command",
+      "word_count": 2,
+      "char_count": 9
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "general_questions": [
+    {
+      "id": "gen_1",
+      "message": "Hello, how are you?",
+      "expected_category": "general",
+      "description": "Simple greeting"
+    },
+    {
+      "id": "gen_2",
+      "message": "What time is it?",
+      "expected_category": "general",
+      "description": "Time question"
+    },
+    {
+      "id": "gen_3",
+      "message": "Tell me a joke",
+      "expected_category": "general",
+      "description": "Request for joke"
+    },
+    {
+      "id": "gen_4",
+      "message": "What's the weather today?",
+      "expected_category": "general",
+      "description": "Weather question"
+    },
+    {
+      "id": "gen_5",
+      "message": "Can you help me?",
+      "expected_category": "general",
+      "description": "General help request"
+    },
+    {
+      "id": "gen_6",
+      "message": "Good morning",
+      "expected_category": "general",
+      "description": "Morning greeting"
+    },
+    {
+      "id": "gen_7",
+      "message": "Thank you for your help",
+      "expected_category": "general",
+      "description": "Gratitude expression"
+    },
+    {
+      "id": "gen_8",
+      "message": "What can you do?",
+      "expected_category": "general",
+      "description": "Capability inquiry"
+    }
+  ],
+  "exercise_questions": [
+    {
+      "id": "ex_1",
+      "message": "I want to strengthen my legs",
+      "expected_category": "exercise",
+      "expected_keyword": "legs",
+      "description": "Leg exercises request"
+    },
+    {
+      "id": "ex_2",
+      "message": "Show me exercises for abs",
+      "expected_category": "exercise",
+      "expected_keyword": "abs",
+      "description": "Abs exercises request"
+    },
+    {
+      "id": "ex_3",
+      "message": "What exercises for chest?",
+      "expected_category": "exercise",
+      "expected_keyword": "chest",
+      "description": "Chest exercises request"
+    },
+    {
+      "id": "ex_4",
+      "message": "I want to train my arms",
+      "expected_category": "exercise",
+      "expected_keyword": "arms",
+      "description": "Arm exercises request"
+    },
+    {
+      "id": "ex_5",
+      "message": "Which exercises for back?",
+      "expected_category": "exercise",
+      "expected_keyword": "back",
+      "description": "Back exercises request"
+    },
+    {
+      "id": "ex_6",
+      "message": "Show me shoulder exercises",
+      "expected_category": "exercise",
+      "expected_keyword": "shoulders",
+      "description": "Shoulder exercises request"
+    },
+    {
+      "id": "ex_7",
+      "message": "Cardio exercises please",
+      "expected_category": "exercise",
+      "expected_keyword": "cardio",
+      "description": "Cardio exercises request"
+    },
+    {
+      "id": "ex_8",
+      "message": "Exercises for beginners",
+      "expected_category": "exercise",
+      "expected_keyword": "beginner",
+      "description": "Beginner exercises request"
+    },
+    {
+      "id": "ex_9",
+      "message": "I need a full body workout",
+      "expected_category": "exercise",
+      "expected_keyword": "full body",
+      "description": "Full body workout request"
+    },
+    {
+      "id": "ex_10",
+      "message": "Best exercises for weight loss",
+      "expected_category": "exercise",
+      "expected_keyword": "weight loss",
+      "description": "Weight loss exercises"
+    },
+    {
+      "id": "ex_11",
+      "message": "Upper body strength training",
+      "expected_category": "exercise",
+      "expected_keyword": "upper body",
+      "description": "Upper body exercises"
+    },
+    {
+      "id": "ex_12",
+      "message": "Core strengthening exercises",
+      "expected_category": "exercise",
+      "expected_keyword": "core",
+      "description": "Core exercises request"
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "edge_1",
+      "message": "",
+      "expected_category": "general",
+      "description": "Empty message"
+    },
+    {
+      "id": "edge_2",
+      "message": "a",
+      "expected_category": "general",
+      "description": "Single character"
+    },
+    {
+      "id": "edge_3",
+      "message": "exercise exercise exercise exercise exercise exercise exercise",
+      "expected_category": "exercise",
+      "description": "Repeated word"
+    },
+    {
+      "id": "edge_4",
+      "message": "I want to workout but don't know what to do",
+      "expected_category": "exercise",
+      "description": "Vague exercise request"
+    },
+    {
+      "id": "edge_5",
+      "message": "Help me get fit",
+      "expected_category": "exercise",
+      "description": "Generic fitness request"
+    }
+  ]
+}

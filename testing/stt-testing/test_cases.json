@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "total_tests": 20,
+    "language": "en",
+    "domain": "fitness",
+    "description": "Speech-to-Text test cases for Whisper API evaluation"
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "minimal",
+      "text": "Hello",
+      "word_count": 1,
+      "char_count": 5,
+      "description": "Single word - greeting"
+    },
+    {
+      "id": 2,
+      "category": "minimal",
+      "text": "Yes thank you",
+      "word_count": 3,
+      "char_count": 13,
+      "description": "Three words - confirmation"
+    },
+    {
+      "id": 3,
+      "category": "short",
+      "text": "I want to work out today",
+      "word_count": 6,
+      "char_count": 24,
+      "description": "Simple statement - workout intent"
+    },
+    {
+      "id": 4,
+      "category": "short",
+      "text": "What exercises do you recommend for abs?",
+      "word_count": 7,
+      "char_count": 40,
+      "description": "Simple question about exercises"
+    },
+    {
+      "id": 5,
+      "category": "short",
+      "text": "How can I lose weight quickly?",
+      "word_count": 6,
+      "char_count": 30,
+      "description": "Common fitness question"
+    },
+    {
+      "id": 6,
+      "category": "short",
+      "text": "How many repetitions should I do?",
+      "word_count": 6,
+      "char_count": 33,
+      "description": "Quantitative question"
+    },
+    {
+      "id": 7,
+      "category": "short",
+      "text": "What is the proper technique for squats?",
+      "word_count": 7,
+      "char_count": 40,
+      "description": "Technical question about form"
+    },
+    {
+      "id": 8,
+      "category": "medium",
+      "text": "I want a beginner workout program that includes full body exercises three times a week",
+      "word_count": 15,
+      "char_count": 87,
+      "description": "Detailed program request"
+    },
+    {
+      "id": 9,
+      "category": "medium",
+      "text": "Can you explain the difference between aerobic and anaerobic exercise and which is better for weight loss?",
+      "word_count": 17,
+      "char_count": 106,
+      "description": "Comparative question requiring explanation"
+    },
+    {
+      "id": 10,
+      "category": "medium",
+      "text": "I have shoulder pain when doing presses, what should I watch out for to avoid injury?",
+      "word_count": 16,
+      "char_count": 86,
+      "description": "Injury prevention question"
+    },
+    {
+      "id": 11,
+      "category": "medium",
+      "text": "What nutrition do you recommend before and after workouts for optimal results in building muscle mass?",
+      "word_count": 16,
+      "char_count": 102,
+      "description": "Nutrition-related query"
+    },
+    {
+      "id": 12,
+      "category": "long",
+      "text": "I work out four times a week but I'm not seeing results in my weight. I eat healthy and sleep enough but my metabolism seems slow. What else can I do to speed up fat loss without losing muscle mass?",
+      "word_count": 42,
+      "char_count": 200,
+      "description": "Complex problem description requiring detailed advice"
+    },
+    {
+      "id": 13,
+      "category": "long",
+      "text": "I want to start CrossFit but I'm worried about injuries because I've heard a lot of negative things. What precautions should I take as a beginner and how can I make sure I execute exercises correctly without hurting my joints?",
+      "word_count": 43,
+      "char_count": 225,
+      "description": "Safety concern with specific activity"
+    },
+    {
+      "id": 14,
+      "category": "long",
+      "text": "I have type 2 diabetes and my doctor told me to exercise regularly. What exercises are safe for me, how intense should the workout be, and what should I watch out for regarding blood sugar levels before and after exercise?",
+      "word_count": 43,
+      "char_count": 222,
+      "description": "Medical condition exercise query"
+    },
+    {
+      "id": 15,
+      "category": "numbers",
+      "text": "I am 35 years old, weigh 185 pounds, and I'm 5 feet 9 inches tall",
+      "word_count": 15,
+      "char_count": 66,
+      "description": "Personal stats with numbers"
+    },
+    {
+      "id": 16,
+      "category": "numbers",
+      "text": "I do 3 sets of 12 repetitions with 45 pounds",
+      "word_count": 10,
+      "char_count": 44,
+      "description": "Exercise metrics with numbers"
+    },
+    {
+      "id": 17,
+      "category": "mixed",
+      "text": "Can I do deadlifts, squats, and bench press on the same day?",
+      "word_count": 12,
+      "char_count": 60,
+      "description": "Multiple compound exercises"
+    },
+    {
+      "id": 18,
+      "category": "mixed",
+      "text": "What should I eat for pre-workout energy and post-workout recovery?",
+      "word_count": 11,
+      "char_count": 67,
+      "description": "Nutrition timing question"
+    },
+    {
+      "id": 19,
+      "category": "pronunciation",
+      "text": "Protein, carbohydrates, fats, vitamins, minerals",
+      "word_count": 5,
+      "char_count": 48,
+      "description": "Macronutrients and micronutrients"
+    },
+    {
+      "id": 20,
+      "category": "pronunciation",
+      "text": "Anaerobic, aerobic, metabolism, hypertrophy, mitochondria",
+      "word_count": 5,
+      "char_count": 57,
+      "description": "Complex scientific terms"
+    }
+  ]
+}

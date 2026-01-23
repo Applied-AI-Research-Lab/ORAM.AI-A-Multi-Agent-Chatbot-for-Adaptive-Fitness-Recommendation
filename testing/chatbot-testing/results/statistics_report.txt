@@ -1,0 +1,55 @@
+================================================================================
+1. OVERALL PERFORMANCE
+================================================================================
+  Total Tests: 25
+  Successful: 25
+  Failed: 0
+  Success Rate: 100.00%
+
+================================================================================
+2. RESPONSE TIME STATISTICS
+================================================================================
+  Mean: 6.694 seconds
+  Standard Deviation: 1.502 seconds
+  Median: 6.558 seconds
+  IQR: 1.935 seconds
+  Min: 3.399 seconds
+  Max: 9.773 seconds
+  95th Percentile: 8.829 seconds
+  99th Percentile: 9.546 seconds
+  Coefficient of Variation: 22.43%
+
+================================================================================
+3. CATEGORY BREAKDOWN
+================================================================================
+
+  GENERAL QUESTIONS:
+    Count: 10
+    Mean Time: 5.802 seconds
+    Std Dev: 1.431 seconds
+    Median: 5.542 seconds
+
+  EXERCISE QUESTIONS:
+    Count: 15
+    Mean Time: 7.289 seconds
+    Std Dev: 1.266 seconds
+    Median: 7.206 seconds
+
+  STATISTICAL COMPARISON (t-test):
+    t-statistic: -2.733
+    p-value: 0.0118
+    Significance: *
+
+================================================================================
+4. MULTI-AGENT ANALYSIS
+================================================================================
+  General Path (Agent1 + Orchestrator): 9 queries (36.0%)
+  Exercise Path (All Agents + MCP): 16 queries (64.0%)
+
+  MCP API PERFORMANCE:
+    Mean Time: 280.1 ms
+    Std Dev: 116.4 ms
+    Min: 24.0 ms
+    Max: 468.6 ms
+
+================================================================================

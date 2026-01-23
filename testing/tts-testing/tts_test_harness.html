@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TTS Auto-Speak Performance Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        #progress {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .test-item {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #ddd;
+            background: #fafafa;
+        }
+
+        .test-item.running {
+            border-left-color: #2196F3;
+            background: #E3F2FD;
+        }
+
+        .test-item.success {
+            border-left-color: #4CAF50;
+            background: #E8F5E9;
+        }
+
+        .test-item.error {
+            border-left-color: #f44336;
+            background: #FFEBEE;
+        }
+
+        #stats {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TTS Auto-Speak Performance Test</h1>
+
+    <div id="progress">
+        <div id="status">Ready to start testing...</div>
+        <div id="current-test"></div>
+        <progress id="progress-bar" max="100" value="0" style="width: 100%; height: 30px; margin-top: 10px;"></progress>
+    </div>
+
+    <div id="controls">
+        <button id="start-btn" onclick="startTests()">Start Tests</button>
+        <button id="download-btn" onclick="downloadResults()" disabled>Download Results</button>
+        <button id="view-stats-btn" onclick="showStats()" disabled>View Statistics</button>
+    </div>
+
+    <div id="test-list"></div>
+
+    <div id="stats" style="display: none;"></div>
+
+    <script src="tts_performance_monitor.js"></script>
+    <script>
+        const API_URL = 'https://my-orama.my-domain.com';
+        const DELAY_MS = 1500;
+        const TEST_CASES = [{ "id": 1, "category": "short", "text": "Good morning! How can I help you today?", "description": "Greeting message - short", "word_count": 7, "char_count": 40 }, { "id": 2, "category": "short", "text": "The exercise was completed successfully.", "description": "Success confirmation - short", "word_count": 6, "char_count": 41 }, { "id": 3, "category": "short", "text": "Continue with the leg exercises.", "description": "Exercise instruction - short", "word_count": 5, "char_count": 33 }, { "id": 4, "category": "short", "text": "Great job! You're on the right track.", "description": "Encouragement - short", "word_count": 7, "char_count": 38 }, { "id": 5, "category": "short", "text": "The total number of repetitions is twelve.", "description": "Numeric information - short", "word_count": 7, "char_count": 43 }, { "id": 6, "category": "medium", "text": "For strengthening your abs, I recommend doing planks for 30 seconds, 3 repetitions. Maintain proper form and breathe steadily throughout the exercise.", "description": "Exercise recommendation - medium", "word_count": 24, "char_count": 151 }, { "id": 7, "category": "medium", "text": "Leg exercises include squats, lunges, and leg press. Start with 3 sets of 10 repetitions for each exercise and gradually increase the intensity over time.", "description": "Workout plan - medium", "word_count": 27, "char_count": 156 }, { "id": 8, "category": "medium", "text": "Proper technique in the deadlift is critical to avoid injuries. Keep your back straight, engage your core, and lift the weight using your legs, not your back.", "description": "Form guidance - medium", "word_count": 30, "char_count": 159 }, { "id": 9, "category": "medium", "text": "For better results, combine resistance training with cardiovascular exercise. I recommend 3 times per week for strength and 2 times for cardio sessions.", "description": "Training split - medium", "word_count": 26, "char_count": 153 }, { "id": 10, "category": "medium", "text": "Recovery is just as important as training. Ensure 7 to 8 hours of sleep, drink plenty of water, and eat protein for muscle repair and growth.", "description": "Recovery advice - medium", "word_count": 28, "char_count": 142 }, { "id": 11, "category": "long", "text": "For weight loss, you need a combination of proper nutrition and exercise. I recommend starting with 30 minutes of cardiovascular training 5 times per week, such as running or cycling. Supplement with strength exercises 3 times per week to maintain muscle mass. Remember that nutrition is 70 percent of success, so reduce your daily calories by 300 to 500.", "description": "Comprehensive weight loss plan - long", "word_count": 68, "char_count": 393 }, { "id": 12, "category": "long", "text": "The beginner program should focus on learning proper technique before increasing resistance. Start with bodyweight exercises like push-ups, squats, and planks. After 4 to 6 weeks, add light weights and gradually increase intensity. Work out 3 to 4 times per week with rest days in between for recovery. Listen to your body and don't rush to progress too quickly.", "description": "Beginner program - long", "word_count": 70, "char_count": 407 }, { "id": 13, "category": "long", "text": "Lower back injuries are common in weightlifting. To avoid them, focus on core strengthening with exercises like bird dogs, dead bugs, and side planks. Always use a support belt when lifting heavy weights in deadlifts or squats. Maintain a neutral spine position and avoid twisting under load. If you feel pain, stop immediately and consult a physical therapist. Prevention is always better than treatment.", "description": "Injury prevention - long", "word_count": 73, "char_count": 440 }, { "id": 14, "category": "long", "text": "Pre-workout preparation includes dynamic warm-up and mobility work. Start with 5 to 10 minutes of light cardiovascular activity to increase body temperature. Then perform dynamic stretches for the muscle groups you'll work, such as leg swings for legs or arm circles for shoulders. Finish with light sets of your main exercise using 40 to 50 percent of your maximum weight. A good warm-up reduces injury risk and improves performance.", "description": "Warm-up protocol - long", "word_count": 80, "char_count": 470 }, { "id": 15, "category": "long", "text": "Post-workout nutrition is critical for recovery. Within 30 to 60 minutes of finishing exercise, consume a meal with protein and carbohydrates. Protein helps repair muscle fibers while carbohydrates replenish glycogen stores. Ideal meals include chicken with rice, protein shake with banana, or yogurt with fruit and honey. Also drink plenty of water to restore fluids lost through sweat during your workout.", "description": "Post-workout nutrition - long", "word_count": 71, "char_count": 447 }, { "id": 16, "category": "very_long", "text": "Creating a comprehensive workout program requires careful planning and understanding of your goals. First, define your main objectives: weight loss, muscle gain, endurance improvement, or general fitness. Based on these, choose appropriate exercises and training frequency. A balanced program includes exercises for all major muscle groups: legs, back, chest, shoulders, arms, and abs. Alternate days between different muscle groups to allow recovery. Also add cardiovascular training 2 to 3 times per week and rest days for optimal results. Track your progress with measurements and adjust the program every 6 to 8 weeks to avoid body adaptation and plateaus.", "description": "Complete workout program design - very long", "word_count": 115, "char_count": 710 }, { "id": 17, "category": "very_long", "text": "The relationship between sleep and athletic performance is very important and often underestimated. During sleep, the body releases growth hormone which is essential for muscle repair and development. Lack of sleep reduces testosterone levels, increases cortisol, and negatively affects protein synthesis. Additionally, insufficient sleep impairs cognitive function, reduces reaction time, and increases injury risk. For optimal performance, aim for 7 to 9 hours of quality sleep each night. Maintain a consistent sleep schedule, avoid caffeine after 2 PM, and create a dark, cool environment in your bedroom. Use of electronic devices before sleep should be limited as blue light affects melatonin production.", "description": "Sleep and performance - very long", "word_count": 118, "char_count": 730 }, { "id": 18, "category": "very_long", "text": "Progressive overload is the fundamental principle for increasing muscle strength and mass. The body adapts to the stress it receives, so you must continually increase training intensity. There are many ways to apply this principle: increasing the weight you lift, increasing repetitions, increasing sets, decreasing rest time, or increasing training frequency. The key is to make small, gradual increases to avoid injuries. For example, increase weight by 2.5 to 5 percent when you can complete all repetitions with good technique. Keep a training log to track progress and ensure continuous improvement. Remember that progress isn't always linear and some weeks may require deload and recovery.", "description": "Progressive overload principle - very long", "word_count": 120, "char_count": 738 }, { "id": 19, "category": "edge_case", "text": "The program: 3x10 squats, 4x8 bench press, 5x5 deadlifts. Rest: 90 seconds.", "description": "Mixed numbers and symbols", "word_count": 13, "char_count": 75 }, { "id": 20, "category": "edge_case", "text": "Question: How do I perform the Romanian Deadlift (RDL)? Answer: Keep your legs straight and bend from the hips.", "description": "Question-answer format with abbreviation", "word_count": 19, "char_count": 119 }, { "id": 21, "category": "edge_case", "text": "High-Intensity Interval Training (HIIT) workout: 30sec work / 30sec rest × 8 rounds = 8min total!", "description": "HIIT with calculations", "word_count": 14, "char_count": 97 }, { "id": 22, "category": "edge_case", "text": "BMI = 25.3, Body Fat% = 18.2%, VO2max = 45 ml/kg/min. Keep it up!!!", "description": "Health metrics with units and symbols", "word_count": 12, "char_count": 68 }, { "id": 23, "category": "edge_case", "text": "Today: Legs! Tomorrow: Back & Biceps. Let's go!!!", "description": "Workout schedule with punctuation", "word_count": 8, "char_count": 50 }, { "id": 24, "category": "minimal", "text": "Yes.", "description": "Single word - absolute minimum", "word_count": 1, "char_count": 4 }, { "id": 25, "category": "minimal", "text": "No, stop.", "description": "Two words - minimal command", "word_count": 2, "char_count": 9 }];
+
+        let monitor = null;
+        let testResults = [];
+
+        function updateProgress(current, total) {
+            const percentage = (current / total) * 100;
+            document.getElementById('progress-bar').value = percentage;
+            document.getElementById('status').textContent =
+                `Testing: ${current} / ${total} (${percentage.toFixed(1)}%)`;
+        }
+
+        function updateTestItem(testId, status, metrics = null) {
+            const item = document.getElementById(`test-${testId}`);
+            if (!item) return;
+
+            item.className = `test-item ${status}`;
+
+            if (metrics && metrics.success) {
+                item.innerHTML += ` - Success ${metrics.total_time_to_audio_ms.toFixed(0)}ms`;
+            } else if (status === 'error') {
+                item.innerHTML += ` - Failed`;
+            }
+        }
+
+        async function startTests() {
+            document.getElementById('start-btn').disabled = true;
+            document.getElementById('download-btn').disabled = true;
+            document.getElementById('view-stats-btn').disabled = true;
+
+            // Initialize monitor
+            monitor = new TTSPerformanceMonitor(API_URL, false);
+
+            // Create test list UI
+            const testList = document.getElementById('test-list');
+            testList.innerHTML = '<h2>Test Progress</h2>';
+            TEST_CASES.forEach(tc => {
+                const div = document.createElement('div');
+                div.id = `test-${tc.id}`;
+                div.className = 'test-item';
+                div.textContent = `#${tc.id}: ${tc.description} (${tc.category}, ${tc.word_count} words)`;
+                testList.appendChild(div);
+            });
+
+            // Run tests
+            try {
+                testResults = await monitor.runTestSuite(TEST_CASES, DELAY_MS,
+                    (current, total, result) => {
+                        updateProgress(current, total);
+                        updateTestItem(result.test_id, result.success ? 'success' : 'error', result);
+                    }
+                );
+
+                document.getElementById('status').textContent = 'All tests completed!';
+                document.getElementById('download-btn').disabled = false;
+                document.getElementById('view-stats-btn').disabled = false;
+
+                // Auto-show stats
+                showStats();
+
+                // Auto-download results
+                monitor.downloadResults('tts_client_results_' + new Date().getTime() + '.json');
+
+            } catch (error) {
+                document.getElementById('status').textContent = 'Test error: ' + error.message;
+                console.error('Test execution error:', error);
+            }
+        }
+
+        function downloadResults() {
+            if (monitor) {
+                monitor.downloadResults('tts_client_results_' + new Date().getTime() + '.json');
+            }
+        }
+
+        function showStats() {
+            if (!monitor) return;
+
+            const stats = monitor.getSummaryStats();
+            const statsDiv = document.getElementById('stats');
+            statsDiv.style.display = 'block';
+
+            statsDiv.innerHTML = `
+                <h2>Performance Statistics</h2>
+                <div class="metric">
+                    <div class="metric-value">${stats.total_tests}</div>
+                    <div class="metric-label">Total Tests</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.successful_tests}</div>
+                    <div class="metric-label">Successful</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.success_rate}%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.total_time_to_audio_ms?.mean || 'N/A'}ms</div>
+                    <div class="metric-label">Avg Time to Audio</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.network_request_duration_ms?.mean || 'N/A'}ms</div>
+                    <div class="metric-label">Avg Network Time</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.audio_duration_seconds?.mean || 'N/A'}s</div>
+                    <div class="metric-label">Avg Audio Duration</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${stats.blob_size_kb?.mean || 'N/A'}KB</div>
+                    <div class="metric-label">Avg File Size</div>
+                </div>
+            `;
+        }
+
+        // NOTE: Auto-start is disabled to allow user interaction for browser autoplay policy
+        // User must click "Start Tests" button to begin
+        // setTimeout(() => {
+        //     console.log('Auto-starting tests in headless mode...');
+        //     startTests();
+        // }, 2000);
+    </script>
+</body>
+
+</html>

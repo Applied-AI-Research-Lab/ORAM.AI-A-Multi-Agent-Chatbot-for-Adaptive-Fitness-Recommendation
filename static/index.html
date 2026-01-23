@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORAM.AI Chatbot — Integration Guide</title>
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        .attribute {
+            background: #e7f3ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .attribute strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: #856404;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>ORAM.AI Chatbot</h1>
+        <p class="subtitle">Secure, voice-enabled, and multi-tenant chatbot — add it with a
+            single script tag.</p>
+        <h3>Check our <a href="/demo" target="_blank">DEMO</a></h3>
+
+        <h2>Step 1: Add the loader</h2>
+        <p>Copy-paste the snippet below <strong>just before the closing <code>&lt;/body&gt;</code> tag</strong> of
+            your
+            page. The loader will securely request the authorized widget for your domain.</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code1', this)">📋 Copy</button>
+            <pre id="code1"><code>&lt;!-- ORAMA Chat Loader (authorized delivery) --&gt;
+&lt;script
+  id="orama-chat-loader"
+  src="https://my-orama.my-domain.com/embed/chat-loader.js"
+  data-api-key="YOUR_API_KEY_HERE"
+  data-user-key="YOUR_USER_KEY_HERE"
+  data-chat-ui-lang="en"
+  data-stealth-mode="off"
+  data-chat-mic-btn="on"
+  data-chat-speaker="on"
+  data-chat-conversation="on"
+  data-fullscreen="off"
+&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <h2>Configuration attributes</h2>
+        <p>You can customize the widget using the <code>data-*</code> attributes on the loader tag. The loader
+            passes
+            these to the widget after authorization.</p>
+
+        <h3>Required</h3>
+
+        <div class="attribute">
+            <strong>src</strong>
+            <p>Loader URL. In development it’s usually <code>https://my-orama.my-domain.com/embed/chat-loader.js</code>.
+            </p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-api-key</strong>
+            <p>Your tenant API key. This authorizes both the widget delivery and the chat/history API calls.</p>
+            <p><em>Example:</em> <code>data-api-key="YOUR_API_KEY_HERE"</code></p>
+            <p class="warning" style="margin-top: 10px; background: #fff3cd; padding: 10px; border-radius: 4px;">
+                <strong>⚠️ Important:</strong> Your domain must be allowlisted for this API key, or the widget will
+                not
+                load.
+            </p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-user-key</strong>
+            <p>Your user identifier on your site/app. It can be a pseudonymous token. The widget uses this to scope
+                history.</p>
+            <p><em>Example:</em> <code>data-user-key="YOUR_USER_KEY_HERE"</code></p>
+        </div>
+
+        <h3>Optional</h3>
+
+        <div class="attribute">
+            <strong>data-chat-ui-lang</strong>
+            <p>Widget UI language.</p>
+            <p><em>Options:</em> <code>"en"</code> (English), <code>"el"</code> (Greek)</p>
+            <p><em>Default:</em> <code>"en"</code></p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-stealth-mode</strong>
+            <p>Privacy mode. When <code>on</code>, no messages are stored on the server; history is kept in the
+                browser
+                session only.</p>
+            <p><em>Options:</em> <code>"on"</code> or <code>"off"</code></p>
+            <p><em>Default:</em> <code>"off"</code></p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-chat-mic-btn</strong>
+            <p>Show the one-tap microphone button for single-utterance recording.</p>
+            <p><em>Options:</em> <code>"on"</code> or <code>"off"</code> (default <code>"on"</code>)</p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-chat-speaker</strong>
+            <p>Auto-speak the assistant’s replies using TTS.</p>
+            <p><em>Options:</em> <code>"on"</code> or <code>"off"</code> (default <code>"on"</code>)</p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-chat-conversation</strong>
+            <p>Hands-free conversation loop (listen → transcribe → reply → speak → listen...).</p>
+            <p><em>Options:</em> <code>"on"</code> or <code>"off"</code> (default <code>"on"</code>)</p>
+        </div>
+
+        <div class="attribute">
+            <strong>data-fullscreen</strong>
+            <p>Enable fullscreen mode for the chat widget.</p>
+            <p><em>Options:</em> <code>"on"</code> or <code>"off"</code> (default <code>"off"</code>)</p>
+        </div>
+
+        <h2>Examples</h2>
+
+        <h3>Example 1: Minimal (required only)</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code2', this)">📋 Copy</button>
+            <pre id="code2"><code>&lt;script
+  src="https://my-orama.my-domain.com/embed/chat-loader.js"
+  data-api-key="YOUR_API_KEY_HERE"
+  data-user-key="YOUR_USER_KEY_HERE"
+&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <h3>Example 2: Voice + auto-speak (recommended)</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code3', this)">📋 Copy</button>
+            <pre id="code3"><code>&lt;script
+    src="https://my-orama.my-domain.com/embed/chat-loader.js"
+    data-api-key="YOUR_API_KEY_HERE"
+    data-user-key="YOUR_USER_KEY_HERE"
+    data-stealth-mode="off"
+    data-chat-conversation="on"
+    data-chat-speaker="on"
+    data-chat-mic-btn="on"
+    data-chat-ui-lang="en"
+&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <h3>Example 3: Stealth mode (no server storage)</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code4', this)">📋 Copy</button>
+            <pre id="code4"><code>&lt;script
+  src="https://my-orama.my-domain.com/embed/chat-loader.js"
+  data-api-key="YOUR_API_KEY_HERE"
+  data-user-key="YOUR_USER_KEY_HERE"
+  data-stealth-mode="on"
+  data-chat-ui-lang="en"
+&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <h2>Security & Access Control</h2>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong>
+            <ul>
+                <li>Your API key must exist in the system and map to your tenant (Website).</li>
+                <li>Your current domain must be allowlisted for this API key, or the server will refuse to deliver
+                    the
+                    widget.</li>
+                <li>Never reference the widget script directly. Always use the loader:
+                    <code>/embed/chat-loader.js</code>.
+                </li>
+                <li>For production, serve over HTTPS and restrict CORS to your domains.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 ORAM.AI Chatbot</p>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(elementId, btn) {
+            const codeElement = document.getElementById(elementId);
+            const text = codeElement.textContent;
+
+            if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try { document.execCommand('copy'); } catch (e) { }
+                document.body.removeChild(textarea);
+                flashButton(btn, 'Copied!');
+                return;
+            }
+
+            navigator.clipboard.writeText(text)
+                .then(() => flashButton(btn, 'Copied!'))
+                .catch(err => alert('Copy failed: ' + err));
+        }
+
+        function flashButton(button, successText) {
+            const originalText = button.textContent;
+            const originalBg = button.style.background;
+            button.textContent = successText;
+            button.style.background = '#28a745';
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = originalBg || '#667eea';
+            }, 1800);
+        }
+    </script>
+</body>
+
+</html>
