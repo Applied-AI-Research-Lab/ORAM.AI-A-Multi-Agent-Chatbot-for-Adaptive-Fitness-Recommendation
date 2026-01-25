@@ -1,0 +1,457 @@
+[
+  {
+    "test_id": "gen_1",
+    "message": "Hello, how are you?",
+    "category": "general",
+    "response_time": 3.386,
+    "response_text": "I\u2019m doing well, thanks for asking! How can I help you with your fitness or training today?",
+    "response_length": 90,
+    "word_count": 17,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_2",
+    "message": "What time is it?",
+    "category": "general",
+    "response_time": 3.707,
+    "response_text": "I can\u2019t see your current local time from here. If you tell me your city/time zone (or enable device time in the app), I can help you figure it out.",
+    "response_length": 147,
+    "word_count": 30,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_3",
+    "message": "Tell me a joke",
+    "category": "general",
+    "response_time": 3.837,
+    "response_text": "Why don\u2019t skeletons work out at the gym?  \nThey don\u2019t have the guts.",
+    "response_length": 68,
+    "word_count": 13,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_4",
+    "message": "What's the weather today?",
+    "category": "general",
+    "response_time": 3.54,
+    "response_text": "I can\u2019t see your live local weather from here. If you tell me your city (or enable location), I can give you a quick forecast-style summary and what to wear for the day.",
+    "response_length": 169,
+    "word_count": 33,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_5",
+    "message": "Can you help me?",
+    "category": "general",
+    "response_time": 4.776,
+    "response_text": "Of course\u2014what do you need help with? If it\u2019s fitness-related, tell me your goal (strength, fat loss, endurance, mobility), your experience level, and any equipment or injuries, and I\u2019ll guide you.",
+    "response_length": 197,
+    "word_count": 31,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_6",
+    "message": "Good morning",
+    "category": "general",
+    "response_time": 2.974,
+    "response_text": "Good morning! How are you feeling today, and what would you like help with\u2014workout ideas, a quick routine, or recovery tips?",
+    "response_length": 124,
+    "word_count": 21,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_7",
+    "message": "Thank you for your help",
+    "category": "general",
+    "response_time": 3.854,
+    "response_text": "You\u2019re welcome! If you tell me your goal (strength, fat loss, mobility, or endurance) and your current fitness level, I can suggest a simple next step or workout plan.",
+    "response_length": 167,
+    "word_count": 29,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "gen_8",
+    "message": "What can you do?",
+    "category": "general",
+    "response_time": 5.107,
+    "response_text": "I can help you plan workouts, explain how to do exercises safely, and tailor routines to your goals (strength, muscle gain, fat loss, mobility) based on your equipment, schedule, and experience. I can also suggest a couple of great moves for what you\u2019re targeting\u2014like squats and push-ups for full-body strength\u2014or help troubleshoot form and progress if something feels off.",
+    "response_length": 374,
+    "word_count": 59,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_1",
+    "message": "I want to strengthen my legs",
+    "category": "exercise",
+    "response_time": 6.481,
+    "response_text": "To strengthen your legs, aim for 2\u20133 focused sessions per week, using controlled reps and gradually increasing resistance over time. Great options to start with are the **glute bridge (two legs on bench)** for glutes/hamstrings and the **band two-legs calf raise** for your calves\u2014try 3 sets of 8\u201312 reps each and add tension as it gets easier.",
+    "response_length": 344,
+    "word_count": 57,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "legs",
+    "exercises_found": 5,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_2",
+    "message": "Show me exercises for abs",
+    "category": "exercise",
+    "response_time": 6.051,
+    "response_text": "Here are a couple of great ab exercises you can start with: **Plank** (builds deep core stability\u2014aim for 3 sets of 20\u201360 seconds) and **Bicycle Crunches** (targets upper/lower abs and obliques\u2014try 3 sets of 12\u201320 reps per side). If you tell me your level (beginner/intermediate) and whether you have any back issues, I can tailor a short ab routine for you.",
+    "response_length": 358,
+    "word_count": 61,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "abs",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_3",
+    "message": "What exercises for chest?",
+    "category": "exercise",
+    "response_time": 7.588,
+    "response_text": "For your chest, great staples are **push-ups** (easy to scale by doing them on your knees or elevated on a bench) and the **bench press** (barbell or dumbbells) to build strength and size. If you want, tell me what equipment you have (none/dumbbells/gym) and your goal (strength vs muscle), and I\u2019ll suggest a quick chest routine.",
+    "response_length": 330,
+    "word_count": 56,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "chest",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_4",
+    "message": "I want to train my arms",
+    "category": "exercise",
+    "response_time": 5.132,
+    "response_text": "To train your arms, focus on a mix of pushing and pulling movements 2\u20133 times per week, leaving at least a day between sessions for recovery. Good staples are **bicep curls** (for biceps) and **tricep dips** (for triceps); aim for 3\u20134 sets of 8\u201312 reps and gradually increase weight or reps over time.",
+    "response_length": 301,
+    "word_count": 53,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "arms",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_5",
+    "message": "Which exercises for back?",
+    "category": "exercise",
+    "response_time": 5.074,
+    "response_text": "For your back, great go-to exercises are **lat pulldowns or pull-ups** (to build your lats) and **dumbbell/barbell rows** (to strengthen your mid-back). If you also want lower-back strength, add **back extensions** with controlled form and a neutral spine.",
+    "response_length": 256,
+    "word_count": 38,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "back",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_6",
+    "message": "Show me shoulder exercises",
+    "category": "exercise",
+    "response_time": 11.644,
+    "response_text": "Here are a couple great shoulder exercises to get you started: **Dumbbell Shoulder Press** (builds overall shoulder strength) and **Lateral Raises** (targets the side delts for width). If you tell me your equipment (dumbbells, cables, bands, or none) and your goal (strength, size, rehab), I can tailor a short routine.",
+    "response_length": 319,
+    "word_count": 50,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "shoulder",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_7",
+    "message": "Cardio exercises please",
+    "category": "exercise",
+    "response_time": 10.342,
+    "response_text": "Here are a couple of great cardio options you can do with little to no equipment: **brisk walking or jogging** (easy to scale up or down) and **jump rope** (high-intensity and efficient). Aim for **20\u201330 minutes**, 3\u20135 days/week, and keep the intensity at a level where you can talk but feel slightly out of breath.",
+    "response_length": 315,
+    "word_count": 55,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "cardio",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_8",
+    "message": "Exercises for beginners",
+    "category": "exercise",
+    "response_time": 5.438,
+    "response_text": "For beginners, aim for simple full\u2011body moves 2\u20133 times per week and focus on good form over heavy weight. Great starter exercises include bodyweight squats and modified push-ups; begin with 2\u20133 sets of 8\u201312 reps and increase gradually as they feel easier.",
+    "response_length": 256,
+    "word_count": 42,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "beginner exercises",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_9",
+    "message": "I need a full body workout",
+    "category": "exercise",
+    "response_time": 6.15,
+    "response_text": "Here\u2019s a simple full-body plan you can do anywhere: try a **push and pull bodyweight** circuit (push-ups + inverted rows or band rows), then add squats and a plank. Do 3 rounds of 8\u201312 reps per move (30\u201360s rest), and aim to repeat it 2\u20133 times per week.",
+    "response_length": 254,
+    "word_count": 48,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "full body",
+    "exercises_found": 1,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_10",
+    "message": "Best exercises for weight loss",
+    "category": "exercise",
+    "response_time": 8.303,
+    "response_text": "For weight loss, prioritize exercises that burn lots of calories and build/maintain muscle: combine cardio (like brisk walking/running, cycling, rowing) with full\u2011body strength training. Great go-to options are interval training (HIIT) and compound lifts (like squats and deadlifts) a few times per week\u2014this mix boosts calorie burn and helps your metabolism stay higher over time.",
+    "response_length": 381,
+    "word_count": 55,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "weight loss",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_11",
+    "message": "Upper body strength training",
+    "category": "exercise",
+    "response_time": 8.423,
+    "response_text": "For upper body strength training, focus on a few big compound movements and progress the weight or reps gradually each week while keeping good form. A simple, effective start is **push-ups** (chest/shoulders/triceps) and **dumbbell or barbell rows** (back/biceps)\u2014aim for 3\u20134 sets of 6\u201312 reps each, 2\u20133 times per week with at least a day of rest between sessions.",
+    "response_length": 364,
+    "word_count": 58,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "upper body",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "ex_12",
+    "message": "Core strengthening exercises",
+    "category": "exercise",
+    "response_time": 7.28,
+    "response_text": "For core strengthening, focus on moves that train both stability and controlled movement. Great options are **planks** (front/side) and **dead bugs**\u2014aim for 2\u20133 sets of 20\u201340 seconds (planks) and 8\u201312 reps per side (dead bugs), keeping your lower back neutral and breathing steadily.",
+    "response_length": 284,
+    "word_count": 43,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "core strengthening",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "edge_1",
+    "message": "",
+    "category": "general",
+    "response_time": 4.492,
+    "response_text": "What would you like help with today\u2014workout plan, an exercise question (form, muscles worked, alternatives), or something like nutrition/recovery? If you tell me your goal (strength, fat loss, muscle gain), your equipment (gym/home), and any injuries, I\u2019ll tailor a quick recommendation.",
+    "response_length": 287,
+    "word_count": 41,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "edge_2",
+    "message": "a",
+    "category": "general",
+    "response_time": 3.455,
+    "response_text": "Hi! What can I help you with today\u2014are you looking for a workout plan, an exercise suggestion, or help with form on a specific movement?",
+    "response_length": 136,
+    "word_count": 25,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": false,
+    "keyword_extracted": null,
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "edge_3",
+    "message": "exercise exercise exercise exercise exercise exercise exercise",
+    "category": "exercise",
+    "response_time": 5.983,
+    "response_text": "Here are two solid, beginner-friendly options you can start with: **bodyweight squats** (great for legs and glutes) and **push-ups** (great for chest, shoulders, and arms). If you tell me your goal (fat loss, muscle gain, strength), your equipment (none/dumbbells/gym), and any injuries, I\u2019ll tailor a quick routine for you.",
+    "response_length": 324,
+    "word_count": 49,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "exercise",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "edge_4",
+    "message": "I want to workout but don't know what to do",
+    "category": "exercise",
+    "response_time": 10.044,
+    "response_text": "A great place to start is a simple full-body routine 2\u20133 times per week: try **bodyweight squats** and **push-ups** (or incline push-ups), then add a **plank**\u2014do 2\u20133 sets of 8\u201312 reps (30\u201345s for planks). If you tell me your goal (fat loss, muscle, strength), your experience level, and what equipment you have (none/dumbbells/gym), I can build a quick plan for you.",
+    "response_length": 367,
+    "word_count": 61,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "workout",
+    "exercises_found": 0,
+    "status": "success"
+  },
+  {
+    "test_id": "edge_5",
+    "message": "Help me get fit",
+    "category": "exercise",
+    "response_time": 8.203,
+    "response_text": "To get fit, aim for a simple weekly mix: 3\u20134 strength sessions plus 2\u20133 cardio sessions, and keep it consistent while gradually increasing weight, reps, or time. Great starting exercises are **squats** and **push-ups** (full-body strength), paired with **brisk walking or cycling** for cardio. If you tell me your goal (fat loss, muscle, endurance), current level, and how many days/week you can train, I\u2019ll map out a quick plan.",
+    "response_length": 429,
+    "word_count": 69,
+    "agents_used": [
+      "Agent1_KeywordExtractor",
+      "MCP_ExerciseDB",
+      "Agent2_ExerciseAdvisor",
+      "Orchestrator"
+    ],
+    "is_exercise_related": true,
+    "keyword_extracted": "fitness",
+    "exercises_found": 0,
+    "status": "success"
+  }
+]
