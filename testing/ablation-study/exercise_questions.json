@@ -1,0 +1,77 @@
+[
+    {
+        "id": "ex_1",
+        "message": "I want to strengthen my legs",
+        "keyword_hint": "legs"
+    },
+    {
+        "id": "ex_2",
+        "message": "Show me exercises for abs",
+        "keyword_hint": "abs"
+    },
+    {
+        "id": "ex_3",
+        "message": "What exercises for chest?",
+        "keyword_hint": "chest"
+    },
+    {
+        "id": "ex_4",
+        "message": "I want to train my arms",
+        "keyword_hint": "arms"
+    },
+    {
+        "id": "ex_5",
+        "message": "Which exercises for back?",
+        "keyword_hint": "back"
+    },
+    {
+        "id": "ex_6",
+        "message": "Show me shoulder exercises",
+        "keyword_hint": "shoulders"
+    },
+    {
+        "id": "ex_7",
+        "message": "Cardio exercises please",
+        "keyword_hint": "cardio"
+    },
+    {
+        "id": "ex_8",
+        "message": "Exercises for beginners",
+        "keyword_hint": "beginner"
+    },
+    {
+        "id": "ex_9",
+        "message": "I need a full body workout",
+        "keyword_hint": "full body"
+    },
+    {
+        "id": "ex_10",
+        "message": "Best exercises for weight loss",
+        "keyword_hint": "weight loss"
+    },
+    {
+        "id": "ex_11",
+        "message": "Upper body strength training",
+        "keyword_hint": "upper body"
+    },
+    {
+        "id": "ex_12",
+        "message": "Core strengthening exercises",
+        "keyword_hint": "core"
+    },
+    {
+        "id": "ex_13",
+        "message": "What are good stretching exercises?",
+        "keyword_hint": "stretching"
+    },
+    {
+        "id": "ex_14",
+        "message": "I want to build my glutes",
+        "keyword_hint": "glutes"
+    },
+    {
+        "id": "ex_15",
+        "message": "HIIT workout suggestions",
+        "keyword_hint": "HIIT"
+    }
+]
