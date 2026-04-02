@@ -1,0 +1,54 @@
+{
+    "description": "A controlled multi-turn session conducted with the deployed ORAM.AI system to empirically demonstrate contextual adaptation capabilities. All six prompts were issued in sequence within a single conversation without restarting the session. The session tests constraint retention, indirect recall, contradiction handling, cross-session boundary awareness, physiological adaptation, and in-session program progression.",
+    "session": [
+        {
+            "turn": 0,
+            "phase": "Constraint establishment",
+            "test": "Does the system provide appropriate constraint-aware guidance from the first turn?",
+            "user": "I use a wheelchair and cannot use my legs. What upper body and core exercises can I still perform from my wheelchair?",
+            "assistant": "You can get a great upper-body and core workout right from your wheelchair with moves like seated resistance-band rows and shoulder presses, plus core work such as seated knee-to-chest (if possible), seated twists, or isometric bracing (tighten your abs and hold). If you have access to bands/dumbbells, also try biceps curls, triceps extensions, chest press, and \"wheelchair push\" intervals for conditioning—start light, keep good posture, and stop if you feel shoulder pain. If you tell me your equipment (bands, dumbbells, cable machine) and any shoulder/back issues, I can suggest a simple routine and rep ranges."
+        },
+        {
+            "turn": 1,
+            "phase": "Phase 1: Immediate constraint retention",
+            "test": "Does the system remember the wheelchair constraint when the user requests a plan without restating it?",
+            "user": "Can you create a 20-minute workout plan for me?",
+            "assistant": "Here's a simple 20-minute wheelchair-friendly upper body + core plan (adjust intensity as needed): 0:00–3:00 Warm-up – Easy wheelchair pushes or arm circles + shoulder rolls, then 30 sec light band pull-aparts (or \"squeeze shoulder blades\"). 3:00–15:00 Strength Circuit (3 rounds, ~4 min/round) – Seated resistance-band row 10–15 reps, Seated shoulder press (dumbbells or band) 8–12 reps, Seated triceps extension 10–15 reps; rest ~20–30 sec between moves, 45–60 sec between rounds. 15:00–19:00 Core Finisher (2 rounds) – Seated twists 30–45 sec, Ab bracing/\"tighten and hold\" 20–30 sec; rest ~20 sec, repeat. 19:00–20:00 Cool-down – Chest/shoulder stretch and slow deep breathing. If you tell me what equipment you have (bands, dumbbells, cables) and any shoulder pain/history, I'll tailor the exact exercises and rep targets."
+        },
+        {
+            "turn": 2,
+            "phase": "Phase 2: Indirect recall",
+            "test": "Does the system implicitly incorporate the constraint when the user asks a general fitness question without mentioning the wheelchair?",
+            "user": "How can I improve my cardiovascular fitness?",
+            "assistant": "You can still build great cardiovascular fitness using upper-body cardio: do 3–5 sessions/week of wheelchair propulsion intervals (e.g., 30–60 sec hard / 60–120 sec easy for 10–20 min) plus 1–2 steady pushes at an easy-moderate pace for 20–40 min. If you have access, an arm bike (upper-body ergometer) is another excellent option for steady work or intervals while reducing strain from constant pushing."
+        },
+        {
+            "turn": 3,
+            "phase": "Phase 3: Contradiction handling",
+            "test": "Does the system reject a request that contradicts the stored constraint and provide adapted alternatives?",
+            "user": "Can you suggest a full-body workout including squats and lunges?",
+            "assistant": "Given you mentioned you use a wheelchair and can't use your legs, I wouldn't include squats or lunges as written—but I can give you a full-body routine that hits similar muscles plus upper body/core. Try 2–3 rounds of: wheelchair push intervals (2–3 min moderate), seated overhead press (8–12 reps), seated row/band row (8–12), medicine-ball or band chest press (8–12), and core like seated knee tucks or Pallof press (10–15/side). If you want, tell me what equipment you have (bands/dumbbells/cables) and I'll tailor it—and we can also discuss safe \"squat/lunge alternatives\" based on your mobility and what movements are possible for you."
+        },
+        {
+            "turn": 4,
+            "phase": "Phase 4: Cross-session boundary awareness",
+            "test": "Does the system correctly report that memory is limited to the current session only?",
+            "user": "What do you remember about my physical limitations?",
+            "assistant": "I only remember what you've told me in this chat: that you use a wheelchair and you can't use your legs for exercise. I don't have any other details about your limitations (like shoulder/elbow/wrist issues, balance/trunk control, or pain) unless you share them here."
+        },
+        {
+            "turn": 5,
+            "phase": "Phase 5: Physiological adaptation within session",
+            "test": "Does the system adjust recommendations based on user-reported fatigue/recovery state provided in the same session?",
+            "user": "Yesterday I trained at high intensity. How should that affect today's workout?",
+            "assistant": "If yesterday was truly high intensity, make today a recovery or lighter day: cut volume by ~30–50%, keep effort around RPE 5–7, and avoid training the same muscles to failure. A good option is an easy circuit of band face pulls and Pallof press/anti-rotation holds, focusing on smooth reps, blood flow, and form—then go hard again once you feel recovered (sleep, soreness, and energy are back to normal)."
+        },
+        {
+            "turn": 6,
+            "phase": "Phase 6: In-session program progression",
+            "test": "Does the system update the program based on user-reported performance data from the current session context?",
+            "user": "Last week I did 3 sets of 10 reps for all exercises. Can you update my program?",
+            "assistant": "Yes—since you just completed 3×10 across the board, switch to a slightly heavier, lower-rep progression this week: 3–4 sets of 6–8 reps on your main moves (stop 1–2 reps shy of failure), and keep accessories at 2–3 sets of 10–12. For example, make your primary pushes/pulls (e.g., seated band row and seated chest press) 3–4×6–8, then finish with lighter control work."
+        }
+    ]
+}
